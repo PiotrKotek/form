@@ -1,0 +1,40 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(231, 240, 240);
+  /* margin: auto; */
+  padding: 10px;
+  width: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+}
+
+/* .center {
+  margin: auto;
+ 
+  padding: 10px;
+} */
+
+/* input {
+  background-color: floralwhite;
+  border-style: solid;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px 20px;
+  box-sizing: border-box;
+}
+
+button {
+  margin: auto;
+  width: 50%;
+  padding: 14px 20px;
+  background-color: rgb(183, 235, 176);
+  cursor: pointer;
+} */
+
+
+/* p {
+  font-family: Lato;
+} */

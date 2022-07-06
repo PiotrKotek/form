@@ -1,0 +1,163 @@
+<form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+  <label for="name" class="label-text">Name: </label>
+
+  <input
+    id="name"
+    type="text"
+    class="form-control"
+    formControlName="name"
+    required
+    placeholder="Your name "
+  />
+  <br />
+  <label
+    for="name"
+    *ngIf="
+      personalForm.get('name')?.invalid &&
+      personalForm.get('name')?.errors &&
+      (personalForm.get('name')?.dirty || personalForm.get('name')?.touched)
+    "
+    class="error"
+    ><small
+      *ngIf="personalForm.get('name')?.hasError('required')"
+      class="error"
+    >
+      Name is required.
+    </small>
+    <small
+      *ngIf="personalForm.get('name')?.hasError('minlength')"
+      class="error"
+    >
+      The minimun length is
+      {{ personalForm.get('name').errors.minlength.requiredLength }} characters.
+    </small>
+    <small
+      *ngIf="personalForm.get('name')?.hasError('maxlength')"
+      class="error"
+    >
+      The maximun length is
+      {{ personalForm.get('name').errors.maxlength.requiredLength }} characters.
+    </small>
+  </label>
+  <br />
+  <label for="surname" class="label-text">Surname: </label>
+
+  <input
+    id="surname"
+    type="text"
+    class="form-control"
+    formControlName="surname"
+    required
+    placeholder="Your surname"
+  />
+  <br />
+  <label
+    for="surname"
+    *ngIf="
+      personalForm.get('surname')?.invalid &&
+      personalForm.get('surname')?.errors &&
+      (personalForm.get('surname')?.dirty ||
+        personalForm.get('surname')?.touched)
+    "
+    class="error"
+    ><small
+      *ngIf="personalForm.get('surname')?.hasError('required')"
+      class="error"
+    >
+      Surname is required.
+    </small>
+    <small
+      *ngIf="personalForm.get('surname')?.hasError('minlength')"
+      class="error"
+    >
+      The minimun length is
+      {{ personalForm.get('surname').errors.minlength.requiredLength }}
+      characters.
+    </small>
+    <small
+      *ngIf="personalForm.get('surname')?.hasError('maxlength')"
+      class="error"
+    >
+      The maximun length is
+      {{ personalForm.get('surname').errors.maxlength.requiredLength }}
+      characters.
+    </small>
+  </label>
+  <br />
+
+  <label for="address" class="label-text">Address: </label>
+  <input
+    id="address"
+    type="text"
+    class="form-control"
+    formControlName="address"
+    required
+    placeholder="Your address: "
+  />
+  <br />
+  <label
+    for="address"
+    *ngIf="
+      personalForm.get('address')?.invalid &&
+      personalForm.get('address')?.errors &&
+      (personalForm.get('address')?.dirty ||
+        personalForm.get('address')?.touched)
+    "
+    class="error"
+    ><small
+      *ngIf="personalForm.get('address')?.hasError('required')"
+      class="error"
+    >
+      Address is required.
+    </small>
+    <small
+      *ngIf="personalForm.get('address')?.hasError('minlength')"
+      class="error"
+    >
+      The minimun length is
+      {{ personalForm.get('address').errors.minlength.requiredLength }}
+      characters.
+    </small>
+    <small
+      *ngIf="personalForm.get('address')?.hasError('maxlength')"
+      class="error"
+    >
+      The maximun length is
+      {{ personalForm.get('address').errors.maxlength.requiredLength }}
+      characters.
+    </small>
+  </label>
+  <br />
+
+  <label for="mail" class="label-text">E-mail: </label>
+  <input
+    id="mail"
+    type="text"
+    class="form-control"
+    formControlName="mail"
+    required
+    placeholder="Your e-mail: "
+  />
+  <br />
+  <label
+    for="mail"
+    *ngIf="
+      personalForm.get('mail')?.invalid &&
+      personalForm.get('mail')?.errors &&
+      (personalForm.get('mail')?.dirty || personalForm.get('mail')?.touched)
+    "
+    class="error"
+    ><small *ngIf="personalForm.get('mail')?.hasError('required')">
+      E-mail is required.
+    </small>
+    <small *ngIf="personalForm.get('mail')?.hasError('email')">
+      Wrong e-mail format.
+    </small>
+  </label>
+  <br />
+
+  <button [disabled]="personalForm.invalid">Submit</button>
+</form>
+
+
+
